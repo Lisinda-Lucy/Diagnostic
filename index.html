@@ -389,6 +389,15 @@ a { color:inherit; text-decoration:none; }
 .pp-card.is-yours .pp-name { color:var(--teal-light); }
 .pp-dims { font-family:var(--mono); font-size:10px; color:var(--mid-grey); letter-spacing:.06em; }
 .pp-yours-tag { font-family:var(--mono); font-size:9px; color:var(--teal-light); letter-spacing:.1em; text-transform:uppercase; background:rgba(119,52,245,.1); border:1px solid rgba(119,52,245,.25); display:inline-block; padding:3px 8px; margin-bottom:8px; }
+.pp-tri { display:block; margin-bottom:10px; overflow:visible; }
+.pat-tri { stroke:rgba(26,26,26,.22); fill:none; stroke-width:1; }
+.pd-s { fill:var(--teal-light); }
+.pd-m { fill:rgba(26,26,26,.14); }
+.pd-core { fill:var(--seasalt); }
+.pd-f { fill:var(--teal-light); animation:fadePulse 2.6s ease-in-out infinite; }
+.pd-cf { fill:rgba(26,26,26,.55); animation:fadePulse 2.6s ease-in-out infinite; }
+@keyframes fadePulse { 0%, 100% { opacity:.85; } 50% { opacity:.2; } }
+@media (prefers-reduced-motion: reduce) { .pd-f, .pd-cf { animation:none; opacity:.55; } }
 
 /* What this means / where to invest next */
 .result-next-block {
@@ -421,14 +430,6 @@ a { color:inherit; text-decoration:none; }
 }
 .rc-sub { font-size:15px; color:var(--muted-dark); line-height:1.68; margin-bottom:24px; }
 
-/* CTAs */
-.result-ctas {
-  background: var(--charcoal-mid);
-  border: 1px solid var(--border-dark);
-  border-top: none;
-  padding: 32px 48px;
-  display: flex; gap:14px; flex-wrap:wrap; align-items:center;
-}
 .btn-primary {
   display:inline-flex; align-items:center; gap:10px;
   background:var(--teal-light); color:var(--charcoal);
@@ -437,13 +438,6 @@ a { color:inherit; text-decoration:none; }
 }
 .btn-primary:hover { background:var(--teal); color:var(--charcoal); }
 .btn-primary:disabled { opacity:.5; cursor:not-allowed; }
-.btn-ghost {
-  display:inline-flex; align-items:center; gap:10px;
-  border:1px solid var(--border-dark); color:var(--mid-grey);
-  font-size:13px; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
-  padding:13px 26px; border-radius:2px; transition:all .2s;
-}
-.btn-ghost:hover { border-color:rgba(119,52,245,.35); color:var(--teal-light); }
 .btn-restart {
   display:block; width:100%; margin-top:16px; padding:14px;
   background:transparent; color:var(--mid-grey); font-family:var(--sans); font-size:14px;
@@ -455,7 +449,7 @@ a { color:inherit; text-decoration:none; }
    RESPONSIVE
 ============================================= */
 @media (max-width: 600px) {
-  .result-hero, .result-desc-block, .result-patterns-block, .result-next-block, .result-ctas { padding:28px 24px; }
+  .result-hero, .result-desc-block, .result-patterns-block, .result-next-block { padding:28px 24px; }
   .pp-grid { grid-template-columns:1fr; }
   .intro-triangle { flex-direction:column; }
   .capture-row { grid-template-columns:1fr; }
@@ -469,8 +463,7 @@ a { color:inherit; text-decoration:none; }
 <header role="banner">
   <nav class="nav" aria-label="Primary navigation">
     <span class="nav-logo" aria-label="GrowthProvision">
-      <!-- Swap in the GrowthProvision logo file once you have it, e.g. images/growthprovision-logo.png -->
-      <img src="images/growthprovision-logo.png" alt="GrowthProvision" style="width:180px;height:auto;display:block;">
+      <img src="images/GP_logo_black.svg" alt="GrowthProvision" style="width:170px;height:auto;display:block;">
     </span>
   </nav>
 </header>
@@ -853,6 +846,35 @@ var ALL_PATTERN_KEYS = [
   'decaying_authority'
 ];
 
+/* Mini Recognition Triangle icon per pattern, adapted from the
+   six-patterns explorer on the Aingworth homepage. Same fixed
+   vertices as the main Triangle: top = Earned Authority,
+   bottom-left = Clarity, bottom-right = Credibility. 's' = strong
+   (solid dot), 'm' = muted (faint dot), 'f' = strong but pulsing
+   (Decaying Authority - the corner that is weakening). */
+var TRI_DOTS = {
+  promising_claim:      { top: 'm', bl: 's', br: 'm' },
+  hidden_expert:         { top: 'm', bl: 'm', br: 's' },
+  validated_generalist:  { top: 's', bl: 'm', br: 'm' },
+  strong_foundation:     { top: 'm', bl: 's', br: 's' },
+  recognized_authority:  { top: 's', bl: 's', br: 's', core: true },
+  decaying_authority:    { top: 'f', bl: 'f', br: 'f', core: true, corePulse: true }
+};
+
+function patternTriSvg(pk) {
+  var d = TRI_DOTS[pk];
+  var svg = '<svg class="pp-tri" width="48" height="41" viewBox="0 0 60 52" aria-hidden="true">' +
+    '<path class="pat-tri" d="M30 5 L5 47 L55 47 Z"/>' +
+    '<circle class="pd pd-' + d.top + '" cx="30" cy="5" r="4"/>' +
+    '<circle class="pd pd-' + d.bl + '" cx="5" cy="47" r="4"/>' +
+    '<circle class="pd pd-' + d.br + '" cx="55" cy="47" r="4"/>';
+  if (d.core) {
+    svg += '<circle class="pd ' + (d.corePulse ? 'pd-cf' : 'pd-core') + '" cx="30" cy="33" r="3.5"/>';
+  }
+  svg += '</svg>';
+  return svg;
+}
+
 /* ============================================================
    STATE
 ============================================================ */
@@ -1197,6 +1219,7 @@ function showResults() {
     var isYours = pk === patternKey;
     return '<div class="pp-card' + (isYours ? ' is-yours' : '') + '">' +
       (isYours ? '<div class="pp-yours-tag">Your pattern</div>' : '') +
+      patternTriSvg(pk) +
       '<div class="pp-name">' + shortPatternName(p.name) + '</div>' +
       '<div class="pp-dims">' + p.tagline + '</div>' +
       '</div>';
@@ -1238,13 +1261,6 @@ function showResults() {
     '<div class="result-next-block">' +
       '<div class="rnb-label">Where to invest first: ' + pattern.priority + '</div>' +
       '<div class="rnb-steps">' + stepsHtml + '</div>' +
-    '</div>' +
-
-    '<div class="result-ctas">' +
-      '<a href="https://aingworth.com/services/" class="btn-primary">Work With Us' +
-        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-      '</a>' +
-      '<a href="https://aingworth.com/book/" class="btn-ghost">About the Book</a>' +
     '</div>' +
 
     '<button class="btn-restart" onclick="restartQuiz()">Start Over</button>';
