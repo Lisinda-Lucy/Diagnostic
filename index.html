@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Brand Visibility Check | The Recognition Diagnostic | GrowthProvision</title>
+<meta name="description" content="A free AI brand visibility check and GEO audit tool. 15 questions reveal which of the six Recognition Triangle patterns describes your brand, and where to start.">
+<meta name="robots" content="index, follow">
+<!-- TODO: set canonical href to the live GitHub Pages URL once published -->
+<link rel="canonical" href="https://growthprovision.com/diagnostic/">
+<link rel="icon" href="images/growthprovision-favicon.png" type="image/png">
+<meta property="og:title" content="The Recognition Diagnostic: GrowthProvision">
+<meta property="og:description" content="Where does your brand sit on the Recognition Triangle? 15 questions. One of six results. A clear starting point.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://growthprovision.com/diagnostic/">
+<meta property="og:site_name" content="GrowthProvision">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://growthprovision.com/images/Recognition-Diagnostic-social.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@growthprovision">
+<meta name="twitter:title" content="Free AI Brand Visibility Check | The Recognition Diagnostic">
+<meta name="twitter:description" content="A free AI brand visibility check. 15 questions, one of six results, a clear starting point.">
+<meta name="twitter:image" content="https://growthprovision.com/images/Recognition-Diagnostic-social.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "The Recognition Diagnostic",
+  "description": "A 15-question diagnostic based on the Recognition Triangle, the model from Become the Answer by Lucy Aingworth. Identifies which of the six brand patterns applies and where to invest first.",
+  "author": { "@type": "Person", "@id": "https://aingworth.com/#lucy", "name": "Lucy Aingworth", "url": "https://aingworth.com/about/" },
+  "url": "https://growthprovision.com/diagnostic/",
+  "educationalUse": "Self-assessment",
+  "about": ["Brand Authority","AI Search Visibility","Recognition Economy","Recognition Triangle"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Base pair: --charcoal is always the "dark ink" slot, --seasalt
+     the "light/white" slot, used consistently as a contrast pair
+     across page background, text, and button states. */
+  --charcoal:       #FFFFFF;
+  --charcoal-mid:   #F7F5FB;
+  --charcoal-light: #EAE5F5;
+  --teal:           #5b21c4;
+  --teal-light:     #7734f5;
+  --clarity:        #6bbfb0;
+  --authority:      #8a8380;
+  --authority-soft: rgba(138,131,128,.35);
+  --platinum:       #E2E2E2;
+  --seasalt:        #1a1a1a;
+  --mid-grey:       #6b6b63;
+  --lavender:       #c4a7e4;
+  --border-dark:    rgba(20,10,40,0.12);
+  --border-light:   rgba(28,15,19,0.1);
+  --muted-dark:     rgba(26,26,26,0.68);
+  --muted-light:    rgba(26,26,26,0.6);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --mono:  'DM Mono', monospace;
+  --max-w: 760px;
+  --max-w-intro: 960px;
+  --px: clamp(20px, 4vw, 56px);
+  --ease: cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--sans); font-size:16px; background:var(--charcoal); color:var(--seasalt); -webkit-font-smoothing:antialiased; line-height:1.7; overflow-x:hidden; }
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.skip { position:absolute; top:-52px; left:24px; background:var(--teal-light); color:var(--charcoal); padding:10px 18px; font-size:13px; font-weight:500; z-index:999; transition:top .2s; }
+.skip:focus { top:8px; }
+:focus-visible { outline:2px solid var(--teal-light); outline-offset:3px; }
+
+/* NAV */
+.nav { position:fixed; top:0; left:0; right:0; z-index:200; height:68px; display:flex; align-items:center; justify-content:space-between; padding:0 var(--px); background:rgba(255,255,255,.96); backdrop-filter:blur(20px); border-bottom:1px solid var(--border-dark); }
+.nav-logo { display:flex; align-items:center; height:68px; }
+.nav-logo-text { font-family:var(--sans); font-size:15px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--seasalt); }
+
+/* =============================================
+   INTRO SCREEN
+============================================= */
+.intro-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px var(--px) 60px;
+  position: relative;
+  overflow: hidden;
+}
+.intro-screen::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(119,52,245,.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+.intro-texture {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(119,52,245,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(119,52,245,.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.intro-inner {
+  max-width: var(--max-w-intro);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.intro-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:26px; }
+.intro-eyebrow-rule { width:32px; height:1px; background:var(--teal-light); }
+.intro-eyebrow-label { font-family:var(--mono); font-size:11px; color:var(--teal-light); letter-spacing:.16em; text-transform:uppercase; }
+.intro-h1 {
+  font-family: var(--serif);
+  font-size: clamp(44px,5.5vw,76px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--seasalt);
+  letter-spacing: -.015em;
+  margin-bottom: 28px;
+}
+.intro-h1 em { font-style:italic; color:var(--teal-light); }
+.intro-sub {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted-dark);
+  margin-bottom: 44px;
+  max-width: none;
+}
+.intro-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+.intro-badge {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border-dark);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid-grey);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.intro-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--teal-light); flex-shrink:0; }
+
+/* Triangle intro graphic */
+.intro-triangle {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 32px 40px;
+  background: var(--charcoal-mid);
+  border: 1px solid var(--border-dark);
+  margin-bottom: 44px;
+}
+.tri-mini { flex-shrink: 0; }
+.tri-dims { display:flex; flex-direction:column; gap:10px; width:100%; margin-top:4px; }
+.tri-dim { display:flex; align-items:center; gap:10px; font-size:14px; color:var(--muted-dark); line-height:1.4; }
+.tri-dim-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.tri-dim-dot.clarity { background:var(--clarity); }
+.tri-dim-dot.credibility { background:var(--lavender); }
+.tri-dim-dot.authority { background:var(--authority); }
+.tri-dim strong { color:var(--seasalt); }
+
+.btn-start {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--teal-light); color: var(--charcoal);
+  font-size: 14px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  padding: 16px 32px; border-radius: 2px; border: none;
+  cursor: pointer; transition: all .2s var(--ease);
+}
+.btn-start:hover { background: var(--teal); color: var(--charcoal); transform: translateY(-1px); }
+.intro-note { font-family:var(--mono); font-size:10px; color:rgba(26,26,26,.35); letter-spacing:.08em; text-transform:uppercase; margin-top:16px; }
+
+/* =============================================
+   QUIZ SCREEN
+============================================= */
+.quiz-screen {
+  display: none;
+  min-height: 100vh;
+  padding: 88px var(--px) 60px;
+}
+.quiz-screen.active { display: block; }
+
+.quiz-shell { max-width: var(--max-w); margin: 0 auto; }
+
+/* Progress */
+.progress-wrap { margin-bottom: 40px; padding-top: 24px; }
+.progress-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.progress-label { font-family:var(--mono); font-size:11px; color:var(--mid-grey); letter-spacing:.1em; text-transform:uppercase; }
+.progress-fraction { font-family:var(--mono); font-size:11px; color:var(--teal-light); letter-spacing:.08em; }
+.progress-bar { height:2px; background:var(--charcoal-light); border-radius:1px; overflow:hidden; }
+.progress-fill { height:100%; background:linear-gradient(90deg, var(--teal-light), var(--teal)); border-radius:1px; transition:width .5s var(--ease); width:0%; }
+
+/* Dimension indicator */
+.dim-indicator { display:flex; gap:8px; margin-bottom:28px; }
+.dim-pip { flex:1; height:3px; border-radius:1px; background:var(--charcoal-light); transition:background .4s; }
+.dim-pip.active { background:var(--clarity); }
+.dim-pip.done { background:rgba(107,191,176,.55); }
+.dim-pip.lav { }
+.dim-pip.lav.active { background:var(--lavender); }
+.dim-pip.lav.done { background:rgba(196,167,228,.6); }
+.dim-pip.grey.active { background:var(--authority); }
+.dim-pip.grey.done { background:var(--authority-soft); }
+
+/* Question card */
+.q-card { animation: fadeUp .35s var(--ease) both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.q-dim-label { font-family:var(--mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:10px; }
+.q-dim-clarity { color:var(--clarity); }
+.q-dim-credibility { color:var(--lavender); }
+.q-dim-authority { color:var(--authority); }
+.q-num { font-family:var(--mono); font-size:10px; color:rgba(26,26,26,.35); letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+.q-text {
+  font-family: var(--serif);
+  font-size: clamp(22px,2.8vw,32px);
+  font-weight: 500;
+  color: var(--seasalt);
+  line-height: 1.28;
+  margin-bottom: 8px;
+}
+.q-hint { font-size:14px; color:var(--mid-grey); line-height:1.6; margin-bottom:28px; }
+
+/* Options */
+.opts { display:flex; flex-direction:column; gap:8px; margin-bottom:28px; }
+.opt {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border-dark);
+  color: var(--muted-dark);
+  font-family: var(--sans); font-size:15px; line-height:1.45;
+  text-align: left; cursor: pointer;
+  transition: all .2s var(--ease); border-radius: 2px; width:100%;
+}
+.opt:hover { border-color:rgba(119,52,245,.35); color:var(--seasalt); background:rgba(119,52,245,.05); }
+.opt.sel { border-color:var(--teal-light); background:rgba(119,52,245,.09); color:var(--seasalt); }
+.opt-chk {
+  width:18px; height:18px; border-radius:50%;
+  border:1.5px solid var(--mid-grey);
+  flex-shrink:0; margin-top:1px;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .2s;
+}
+.opt.sel .opt-chk { background:var(--teal-light); border-color:var(--teal-light); }
+.opt.sel .opt-chk::after { content:''; width:6px; height:6px; border-radius:50%; background:var(--charcoal); }
+.opt-text {}
+.opt-lbl { display:block; font-weight:500; color:inherit; }
+.opt-sub { display:block; font-size:13px; color:var(--mid-grey); margin-top:3px; line-height:1.45; }
+.opt.sel .opt-sub { color:rgba(119,52,245,.7); }
+
+/* Nav buttons */
+.q-nav { display:flex; align-items:center; justify-content:space-between; }
+.btn-back {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono); font-size:11px; color:var(--mid-grey);
+  letter-spacing:.1em; text-transform:uppercase;
+  background:none; border:none; cursor:pointer; transition:color .2s; padding:0;
+}
+.btn-back:hover { color:var(--teal-light); }
+.btn-next {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--teal-light); color:var(--charcoal);
+  font-family:var(--sans); font-size:13px; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  padding:13px 24px; border:none; border-radius:2px;
+  cursor:pointer; transition:all .2s var(--ease);
+}
+.btn-next:hover:not(:disabled) { background:var(--teal); color:var(--charcoal); }
+.btn-next:disabled { opacity:.3; cursor:not-allowed; }
+
+/* =============================================
+   LEAD CAPTURE (between quiz and results)
+============================================= */
+.capture-form { display:flex; flex-direction:column; gap:18px; margin-top:8px; }
+.capture-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.field-group { display:flex; flex-direction:column; gap:6px; }
+.field-label { font-family:var(--mono); font-size:10px; color:var(--mid-grey); letter-spacing:.1em; text-transform:uppercase; }
+.field-input {
+  padding:13px 16px;
+  background:var(--charcoal-mid);
+  border:1px solid var(--border-dark);
+  color:var(--seasalt);
+  font-family:var(--sans); font-size:15px;
+  outline:none; border-radius:2px; width:100%;
+  transition:border-color .2s, background .2s;
+}
+.field-input::placeholder { color:rgba(250,250,250,.3); }
+.field-input:focus { border-color:rgba(119,52,245,.5); background:#FFFFFF; }
+.capture-error { font-size:13px; color:var(--lavender); margin-top:-4px; }
+
+/* =============================================
+   RESULTS SCREEN
+============================================= */
+.results-screen {
+  display: none;
+  min-height: 100vh;
+  padding: 88px var(--px) 80px;
+}
+.results-screen.active { display: block; }
+.results-shell { max-width: var(--max-w); margin: 0 auto; }
+
+/* Result hero */
+.result-hero {
+  background: var(--charcoal-mid);
+  border: 1px solid var(--border-dark);
+  padding: 44px 48px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.result-hero::before {
+  content: '';
+  position: absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--teal-light), var(--lavender));
+}
+.result-eyebrow { font-family:var(--mono); font-size:11px; color:var(--mid-grey); letter-spacing:.12em; text-transform:uppercase; margin-bottom:12px; }
+.result-pattern-name {
+  font-family: var(--serif);
+  font-size: clamp(48px,7vw,80px);
+  font-weight: 500;
+  color: var(--teal-light);
+  line-height: .95;
+  margin-bottom: 6px;
+  letter-spacing: -.02em;
+}
+.result-pattern-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--teal-light);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .6;
+  margin-bottom: 28px;
+}
+
+/* Score bars */
+.score-bars { display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+.score-bar-item {}
+.score-bar-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
+.score-bar-label { font-family:var(--mono); font-size:11px; color:var(--mid-grey); letter-spacing:.1em; text-transform:uppercase; }
+.score-bar-val { font-family:var(--mono); font-size:11px; color:var(--seasalt); letter-spacing:.06em; }
+.score-bar-track { height:6px; background:var(--charcoal-light); border-radius:3px; overflow:hidden; }
+.score-bar-fill { height:100%; border-radius:3px; transition:width 1.2s var(--ease); width:0%; }
+.score-bar-fill.clarity { background:var(--clarity); }
+.score-bar-fill.credibility { background:var(--lavender); }
+.score-bar-fill.authority { background:var(--authority); }
+
+/* Result description */
+.result-desc-block {
+  background: var(--charcoal-mid);
+  border: 1px solid var(--border-dark);
+  border-top: none;
+  padding: 36px 48px;
+  margin-bottom: 2px;
+}
+.rdb-label { font-family:var(--mono); font-size:10px; color:var(--teal-light); letter-spacing:.14em; text-transform:uppercase; margin-bottom:14px; }
+.rdb-text { font-size:16px; line-height:1.78; color:var(--muted-dark); }
+.rdb-text p + p { margin-top:14px; }
+
+/* All six patterns block (sits between "What this means" and "Where to invest first") */
+.result-patterns-block {
+  background: var(--charcoal-mid);
+  border: 1px solid var(--border-dark);
+  border-top: none;
+  padding: 36px 48px;
+  margin-bottom: 2px;
+}
+.pp-label { font-family:var(--mono); font-size:10px; color:var(--mid-grey); letter-spacing:.14em; text-transform:uppercase; margin-bottom:20px; }
+.pp-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.pp-card {
+  background: var(--charcoal);
+  padding: 20px 22px;
+  border: 1px solid var(--border-dark);
+  transition: border-color .2s;
+}
+.pp-card.is-yours { border-color:rgba(119,52,245,.4); background:rgba(119,52,245,.06); }
+.pp-name { font-family:var(--serif); font-size:17px; font-weight:500; color:var(--seasalt); margin-bottom:4px; }
+.pp-card.is-yours .pp-name { color:var(--teal-light); }
+.pp-dims { font-family:var(--mono); font-size:10px; color:var(--mid-grey); letter-spacing:.06em; }
+.pp-yours-tag { font-family:var(--mono); font-size:9px; color:var(--teal-light); letter-spacing:.1em; text-transform:uppercase; background:rgba(119,52,245,.1); border:1px solid rgba(119,52,245,.25); display:inline-block; padding:3px 8px; margin-bottom:8px; }
+
+/* What this means / where to invest next */
+.result-next-block {
+  background: var(--charcoal-mid);
+  border: 1px solid var(--border-dark);
+  border-top: none;
+  padding: 36px 48px;
+  margin-bottom: 2px;
+}
+.rnb-label { font-family:var(--mono); font-size:10px; color:var(--teal-light); letter-spacing:.14em; text-transform:uppercase; margin-bottom:16px; }
+.rnb-steps { display:flex; flex-direction:column; gap:0; }
+.rnb-step {
+  display: grid; grid-template-columns: 40px 1fr; gap: 14px;
+  align-items: start; padding: 16px 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.rnb-step:first-child { padding-top:0; }
+.rnb-step:last-child { border-bottom:none; padding-bottom:0; }
+.rnb-n { font-family:var(--serif); font-size:32px; font-weight:400; color:var(--teal-light); opacity:.3; line-height:1; }
+.rnb-title { font-size:14px; font-weight:500; color:var(--seasalt); margin-bottom:4px; letter-spacing:.02em; text-transform:uppercase; }
+.rnb-text { font-size:14px; color:var(--mid-grey); line-height:1.65; }
+
+.rc-title {
+  font-family: var(--serif);
+  font-size: clamp(20px,2.5vw,28px);
+  font-weight: 500;
+  color: var(--seasalt);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.rc-sub { font-size:15px; color:var(--muted-dark); line-height:1.68; margin-bottom:24px; }
+
+/* CTAs */
+.result-ctas {
+  background: var(--charcoal-mid);
+  border: 1px solid var(--border-dark);
+  border-top: none;
+  padding: 32px 48px;
+  display: flex; gap:14px; flex-wrap:wrap; align-items:center;
+}
+.btn-primary {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--teal-light); color:var(--charcoal);
+  font-size:13px; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
+  padding:14px 26px; border-radius:2px; transition:all .2s;
+}
+.btn-primary:hover { background:var(--teal); color:var(--charcoal); }
+.btn-primary:disabled { opacity:.5; cursor:not-allowed; }
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:10px;
+  border:1px solid var(--border-dark); color:var(--mid-grey);
+  font-size:13px; font-weight:500; letter-spacing:.08em; text-transform:uppercase;
+  padding:13px 26px; border-radius:2px; transition:all .2s;
+}
+.btn-ghost:hover { border-color:rgba(119,52,245,.35); color:var(--teal-light); }
+.btn-restart {
+  display:block; width:100%; margin-top:16px; padding:14px;
+  background:transparent; color:var(--mid-grey); font-family:var(--sans); font-size:14px;
+  border:1px solid var(--border-dark); cursor:pointer; transition:all .2s; border-radius:2px;
+}
+.btn-restart:hover { border-color:rgba(119,52,245,.35); color:var(--teal-light); }
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 600px) {
+  .result-hero, .result-desc-block, .result-patterns-block, .result-next-block, .result-ctas { padding:28px 24px; }
+  .pp-grid { grid-template-columns:1fr; }
+  .intro-triangle { flex-direction:column; }
+  .capture-row { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header role="banner">
+  <nav class="nav" aria-label="Primary navigation">
+    <span class="nav-logo" aria-label="GrowthProvision">
+      <!-- Swap in the GrowthProvision logo file once you have it, e.g. images/growthprovision-logo.png -->
+      <img src="images/growthprovision-logo.png" alt="GrowthProvision" style="width:180px;height:auto;display:block;">
+    </span>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- =============================================
+     INTRO SCREEN
+============================================= -->
+<div class="intro-screen" id="intro-screen" aria-labelledby="diag-h">
+  <div class="intro-texture" aria-hidden="true"></div>
+  <div class="intro-inner">
+
+    <div class="intro-eyebrow">
+      <div class="intro-eyebrow-rule" aria-hidden="true"></div>
+      <span class="intro-eyebrow-label">The Recognition Diagnostic</span>
+    </div>
+
+    <h1 class="intro-h1" id="diag-h">
+      Where does your brand sit<br>on the <em>Recognition Triangle?</em>
+    </h1>
+
+    <p class="intro-sub">The Recognition Diagnostic is a free GEO audit tool and AI brand visibility check. In 15 questions across three dimensions it gives you a brand authority assessment: one of six results and a clear picture of where you stand and where to invest first. Think of it as an AI search visibility score across the three dimensions that decide whether AI systems cite you.</p>
+
+    <div class="intro-badges" aria-label="What to expect">
+      <div class="intro-badge"><span class="intro-badge-dot" aria-hidden="true"></span>15 questions</div>
+      <div class="intro-badge"><span class="intro-badge-dot" aria-hidden="true"></span>About 5 minutes</div>
+      <div class="intro-badge"><span class="intro-badge-dot" aria-hidden="true"></span>One of six patterns</div>
+      <div class="intro-badge"><span class="intro-badge-dot" aria-hidden="true"></span>Free</div>
+    </div>
+
+    <div class="intro-triangle" aria-label="The three dimensions you will be assessed on">
+      <div class="tri-mini" style="width:100%; max-width:280px; margin:0 auto 28px;">
+        <img
+          src="images/Recognition_Diagnostic_colours.png"
+          alt="The Recognition Triangle"
+          style="width:100%; height:auto; display:block;"
+        >
+      </div>
+      <div class="tri-dims">
+        <div class="tri-dim"><span class="tri-dim-dot clarity" aria-hidden="true"></span><span><strong>Clarity:</strong> how clearly your brand communicates what you stand for</span></div>
+        <div class="tri-dim"><span class="tri-dim-dot credibility" aria-hidden="true"></span><span><strong>Credibility:</strong> the external signals that verify your expertise</span></div>
+        <div class="tri-dim"><span class="tri-dim-dot authority" aria-hidden="true"></span><span><strong>Earned Authority:</strong> the independent ecosystem validation that makes you impossible to overlook</span></div>
+      </div>
+    </div>
+
+    <button class="btn-start" onclick="startQuiz()" aria-label="Start the diagnostic">
+      Start the Diagnostic
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <p class="intro-note">Based on the Recognition Triangle, the diagnostic model from Become the Answer by Lucy Aingworth</p>
+
+  </div>
+</div>
+
+<!-- =============================================
+     QUIZ SCREEN
+============================================= -->
+<div class="quiz-screen" id="quiz-screen" aria-live="polite">
+  <div class="quiz-shell">
+
+    <!-- Progress -->
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span class="progress-label">Your progress</span>
+        <span class="progress-fraction" id="q-fraction">1 of 15</span>
+      </div>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="q-progress-bar">
+        <div class="progress-fill" id="q-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Dimension indicator -->
+    <div class="dim-indicator" aria-hidden="true" id="dim-indicator"></div>
+
+    <!-- Questions are injected here -->
+    <div id="q-mount"></div>
+
+  </div>
+</div>
+
+<!-- =============================================
+     LEAD CAPTURE SCREEN
+     Shown after the final question, before results are revealed.
+============================================= -->
+<div class="results-screen" id="capture-screen" aria-live="polite">
+  <div class="results-shell" id="capture-mount"></div>
+</div>
+
+<!-- =============================================
+     RESULTS SCREEN
+============================================= -->
+<div class="results-screen" id="results-screen" aria-live="polite">
+  <div class="results-shell" id="results-mount"></div>
+</div>
+
+</main>
+
+<script>
+'use strict';
+
+/* ============================================================
+   QUESTIONS
+   5 per dimension (Clarity, Credibility, Earned Authority)
+   Each option scores the relevant dimension 0-3
+   dim: 'c' = Clarity, 'k' = Credibility, 'a' = Authority
+============================================================ */
+var QUESTIONS = [
+  // ---- CLARITY (Q1-5) ----
+  {
+    id: 1, dim: 'c',
+    text: 'If a stranger asked your best client to describe what your brand stands for in one sentence, what would happen?',
+    hint: 'Think about the last time someone introduced you or your brand to someone else.',
+    options: [
+      { label: 'They would struggle: different clients say different things', sub: 'No single idea you are consistently known for', score: 0 },
+      { label: 'They would give a rough answer, but it would not be precise', sub: 'Broadly right but missing the specific concept you own', score: 1 },
+      { label: 'They would give a decent description, not quite the one you would use', sub: 'Clear-ish, but not sharp enough to be distinctive', score: 2 },
+      { label: 'They would describe it exactly the way you would', sub: 'One clear, consistent idea that has lodged in the market', score: 3 }
+    ]
+  },
+  {
+    id: 2, dim: 'c',
+    text: 'How consistently does your brand use the same language to describe what you do across all channels?',
+    hint: 'Compare your website, LinkedIn, email signatures, and how you introduce yourself in conversation.',
+    options: [
+      { label: 'Very inconsistently: it changes depending on the audience or context', sub: 'No single agreed language, shifts with the room', score: 0 },
+      { label: 'Somewhat consistently: the broad direction is the same but the words shift', sub: 'Core idea is there but expressed differently each time', score: 1 },
+      { label: 'Mostly consistent with some drift at the edges', sub: 'Main message holds but periphery varies', score: 2 },
+      { label: 'Very consistently: the same language appears everywhere', sub: 'One clear concept expressed the same way across all contexts', score: 3 }
+    ]
+  },
+  {
+    id: 3, dim: 'c',
+    text: 'Does your brand own a specific concept or idea, or is it associated with a broad category?',
+    hint: 'A concept is a named idea. A category is an industry description.',
+    options: [
+      { label: 'We are associated with a broad category at best', sub: 'Digital marketing, consulting, technology, something general', score: 0 },
+      { label: 'We have a positioning but it is not a distinct concept', sub: 'Differentiated in description but not owning a specific idea', score: 1 },
+      { label: 'We have a concept but it is not yet distinctively ours', sub: 'The idea exists but others use similar language', score: 2 },
+      { label: 'We own a specific named concept that is distinctively ours', sub: 'The idea and our name are becoming inseparable', score: 3 }
+    ]
+  },
+  {
+    id: 4, dim: 'c',
+    text: 'How clear is your brand about who it is specifically for?',
+    hint: 'Not a demographic. The specific person, problem, or context you are the best answer for.',
+    options: [
+      { label: 'We try to appeal to everyone: our audience is broad by design', sub: 'No specific target, casting wide', score: 0 },
+      { label: 'We have a general audience in mind but have not made it very specific', sub: 'Directional but not precise', score: 1 },
+      { label: 'We have a defined audience but the message does not always reflect it', sub: 'Internal clarity not yet fully expressed externally', score: 2 },
+      { label: 'Very clear: the right people recognize themselves immediately', sub: 'Specific enough that the wrong people self-select out', score: 3 }
+    ]
+  },
+  {
+    id: 5, dim: 'c',
+    text: 'If an AI were asked about the best solution for the specific problem you solve, how clearly would it associate your brand with that answer?',
+    hint: 'Try asking ChatGPT or Perplexity the question your ideal client is asking.',
+    options: [
+      { label: 'We do not appear at all or appear for the wrong things', sub: 'The machine does not connect us to the problem we solve', score: 0 },
+      { label: 'We appear inconsistently or in the wrong context', sub: 'Sometimes mentioned but not for our primary concept', score: 1 },
+      { label: 'We appear but the description does not capture what makes us distinct', sub: 'Present but not positioned correctly', score: 2 },
+      { label: 'We appear clearly and the description reflects our actual positioning', sub: 'The machine knows what we stand for', score: 3 }
+    ]
+  },
+
+  // ---- CREDIBILITY (Q6-10) ----
+  {
+    id: 6, dim: 'k',
+    text: 'How much original intellectual work has your brand produced that others in your field can reference?',
+    hint: 'Original frameworks, named methodologies, research, books, or foundational thinking.',
+    options: [
+      { label: 'Almost none: most of our content summarizes or aggregates others', sub: 'We share information but have not created original frameworks', score: 0 },
+      { label: 'Some original thinking but nothing that has been named or formalized', sub: 'Ideas exist but have not been made referenceable', score: 1 },
+      { label: 'We have original frameworks or named approaches but limited external uptake', sub: 'The intellectual work exists, recognition is still building', score: 2 },
+      { label: 'Strong: named frameworks, a book, or original research others reference', sub: 'Clear intellectual contribution that independent sources can cite', score: 3 }
+    ]
+  },
+  {
+    id: 7, dim: 'k',
+    text: 'How deep is the expertise behind your brand positioning?',
+    hint: 'Be honest. Not what you would say in a pitch. What you know to be true.',
+    options: [
+      { label: 'We are still building genuine expertise in this area', sub: 'The positioning is ahead of the substance behind it', score: 0 },
+      { label: 'The expertise exists but has not been thoroughly documented or expressed', sub: 'Real knowledge that has not been made externally legible', score: 1 },
+      { label: 'Solid expertise, some gaps that we are aware of', sub: 'Deep in core areas, thinner at the edges', score: 2 },
+      { label: 'Genuine depth: we know more about this than almost anyone', sub: 'Expertise that would withstand peer scrutiny', score: 3 }
+    ]
+  },
+  {
+    id: 8, dim: 'k',
+    text: 'How well represented is your brand in the formal knowledge structures that AI uses as reference: Wikipedia, industry databases, knowledge graphs?',
+    hint: 'Search Wikipedia and major industry directories for your brand name and key people.',
+    options: [
+      { label: 'Not present in any of these: no structural layer exists', sub: 'No Wikipedia entry, no structured data, no directory presence', score: 0 },
+      { label: 'Minimal presence: perhaps a directory listing or two, nothing substantive', sub: 'Exists but thin and not authoritative', score: 1 },
+      { label: 'Some presence but incomplete or not fully accurate', sub: 'In the right places but the information could be stronger', score: 2 },
+      { label: 'Well represented: accurate, substantive, and correctly categorized', sub: 'Strong structural layer that reflects current positioning', score: 3 }
+    ]
+  },
+  {
+    id: 9, dim: 'k',
+    text: 'Does your website and content use structured data markup to make your entity clear to AI systems?',
+    hint: 'Schema.org JSON-LD for Person, Organization, Article, Book, and similar types.',
+    options: [
+      { label: 'No structured data at all', sub: 'The machine has to infer everything from unstructured content', score: 0 },
+      { label: 'Some basic markup but not comprehensive', sub: 'Partial implementation that leaves gaps', score: 1 },
+      { label: 'Reasonably comprehensive structured data in most key areas', sub: 'Covers the main entity types relevant to the brand', score: 2 },
+      { label: 'Thorough structured data across all relevant entity types', sub: 'The machine can read the brand clearly and confidently', score: 3 }
+    ]
+  },
+  {
+    id: 10, dim: 'k',
+    text: 'How much has your brand published in genuinely credible third-party environments: respected publications, peer-reviewed contexts, industry research?',
+    hint: 'Not paid placements or guest posts. Independent editorial placement in environments that are credible without you.',
+    options: [
+      { label: 'Almost nothing beyond our own channels', sub: 'Primarily owned content with no credible third-party presence', score: 0 },
+      { label: 'A handful of placements but no consistent pattern', sub: 'Occasional external publication without regularity', score: 1 },
+      { label: 'Regular presence in some credible publications', sub: 'A pattern beginning to form but not yet comprehensive', score: 2 },
+      { label: 'Consistent presence across multiple credible independent publications', sub: 'A clear editorial track record the machine can read as authoritative', score: 3 }
+    ]
+  },
+
+  // ---- EARNED AUTHORITY (Q11-15) ----
+  {
+    id: 11, dim: 'a',
+    text: 'When independent experts, analysts, or journalists in your field write about topics you own, do they reference your work?',
+    hint: 'Not when writing about you. When writing about the topic, do they cite your thinking unprompted?',
+    options: [
+      { label: 'No, our work is not referenced by independent voices', sub: 'The expert ecosystem does not engage with our thinking', score: 0 },
+      { label: 'Occasionally, but there is no consistent pattern', sub: 'A few citations exist but not enough to constitute a pattern', score: 1 },
+      { label: 'Yes, in some areas: a growing but incomplete pattern', sub: 'Beginning to be cited, not yet consistently across the field', score: 2 },
+      { label: 'Yes, regularly: our frameworks are referenced by independent experts', sub: 'A clear pattern of expert citation that compounds over time', score: 3 }
+    ]
+  },
+  {
+    id: 12, dim: 'a',
+    text: 'In the communities and forums where your ideal clients gather, is your brand discussed organically?',
+    hint: 'Reddit, LinkedIn communities, industry Slack groups, Discord servers: places you did not put yourself.',
+    options: [
+      { label: 'No, we are not discussed in independent communities', sub: 'No organic community presence beyond what we manage', score: 0 },
+      { label: 'Occasionally mentioned but not a regular part of the conversation', sub: 'Known but not embedded in independent community discourse', score: 1 },
+      { label: 'Sometimes discussed with generally positive framing', sub: 'A community presence exists but is not dominant', score: 2 },
+      { label: 'Regularly recommended by practitioners who have no commercial relationship with us', sub: 'Genuine organic advocacy in independent communities', score: 3 }
+    ]
+  },
+  {
+    id: 13, dim: 'a',
+    text: 'How consistent is the picture independent sources paint of your brand compared to how you describe yourself?',
+    hint: 'Search your brand name across independent sources. What story do they tell? Does it match your own?',
+    options: [
+      { label: 'Very inconsistent: different sources say different things, often wrong', sub: 'The composite picture is fragmented or actively incorrect', score: 0 },
+      { label: 'Somewhat inconsistent: outdated or incomplete information is common', sub: 'Present but the narrative is partial or temporal', score: 1 },
+      { label: 'Broadly consistent with some gaps or outdated elements', sub: 'Largely accurate but not fully aligned with current positioning', score: 2 },
+      { label: 'Highly consistent: independent sources tell the same story we tell', sub: 'The composite picture matches our intended positioning', score: 3 }
+    ]
+  },
+  {
+    id: 14, dim: 'a',
+    text: 'Has your brand ever generated earned media, coverage, citations, or recommendations that you did not initiate, pay for, or ask for?',
+    hint: 'Not PR placements or arranged interviews. Genuine unprompted coverage or reference.',
+    options: [
+      { label: 'No, all our coverage and mentions have been arranged or prompted', sub: 'No truly earned signals exist in the independent ecosystem', score: 0 },
+      { label: 'A small amount: a few unsolicited mentions but nothing substantial', sub: 'Early signals of independent recognition without a pattern', score: 1 },
+      { label: 'Some earned media: a pattern beginning to form', sub: 'Independent signals emerging across a few channels', score: 2 },
+      { label: 'Yes, regularly: earned coverage across multiple independent channels', sub: 'A strong and growing pattern of unprompted independent recognition', score: 3 }
+    ]
+  },
+  {
+    id: 15, dim: 'a',
+    text: 'If you stopped all content production and outreach for six months, what would happen to your brand\'s visibility in AI search?',
+    hint: 'This tests whether you have built something that compounds or something that requires constant feeding.',
+    options: [
+      { label: 'It would disappear almost immediately', sub: 'Everything depends on active management: nothing compounds without us', score: 0 },
+      { label: 'It would decline significantly within a few months', sub: 'Weak independent signals that decay quickly without reinforcement', score: 1 },
+      { label: 'It would hold for a while but gradually weaken', sub: 'Some compounding signals but not enough to sustain long-term', score: 2 },
+      { label: 'It would hold or continue growing on its own momentum', sub: 'Genuine Earned Authority that compounds independently', score: 3 }
+    ]
+  }
+];
+
+/* ============================================================
+   SIX PATTERNS
+   Based exactly on Become the Answer, Chapter 8
+============================================================ */
+var PATTERNS = {
+  promising_claim: {
+    name: 'The Promising Claim',
+    tagline: 'Strong Clarity. Weak Credibility and Earned Authority.',
+    description: [
+      'Your positioning is clear and you know exactly what you stand for. The machine can categorize you. But it cannot recommend you with confidence because the independent signals needed to validate the claim are not yet there.',
+      'This is not a strategic failure. It is a sequencing issue. You have built the case that you are the right answer. You have not yet built the evidence that independent sources agree.'
+    ],
+    priority: 'Credibility',
+    steps: [
+      { title: 'Build the substance first', text: 'Your positioning needs intellectual depth behind it before distribution will compound. Original frameworks, named methodologies, or documented thinking that independent sources can reference.' },
+      { title: 'Create referenceable intellectual assets', text: 'Not more content. Foundational assets: a book, a named framework, original research, that experts and publications can cite without being asked.' },
+      { title: 'Then activate the ecosystem', text: 'Once the credibility layer exists, the distribution work will land. Before it does, distributing a thin picture just makes the thinness more visible.' }
+    ]
+  },
+  hidden_expert: {
+    name: 'The Hidden Expert',
+    tagline: 'Strong Credibility. Weak Clarity and Earned Authority.',
+    description: [
+      'The expertise is real and deep. But the positioning is too broad or fragmented for the machine to associate it with a specific concept. You know a great deal. The machine cannot confidently say what specifically you stand for.',
+      'This is the pattern of the expert whose knowledge is scattered across too many topics, or whose positioning has never been made specific enough to own a single idea clearly.'
+    ],
+    priority: 'Clarity',
+    steps: [
+      { title: 'Identify the one concept to own', text: 'Not a category. Not a service description. A specific named idea that, if your brand were the only source of it, would make you impossible to leave out of a conversation about your field.' },
+      { title: 'Anchor all expertise to that concept', text: 'The intellectual depth you have built needs to be organized around a single clear positioning. Every asset, every appearance, every piece of thinking should reinforce the same concept.' },
+      { title: 'Then earn independent validation for that specific idea', text: 'Once the concept is clear, the Earned Authority work will concentrate rather than disperse. Scattered expertise earns scattered recognition.' }
+    ]
+  },
+  validated_generalist: {
+    name: 'The Validated Generalist',
+    tagline: 'Some Earned Authority. Weak Clarity and Credibility.',
+    description: [
+      'You are present in independent sources. The machine confirms you exist. But the picture those sources paint is scattered and inconsistent: it cannot form a coherent view of what you specifically represent.',
+      'You have ecosystem presence without the underlying structure to make it cohere. The signals exist but they pull in too many directions for the machine to form a confident, specific picture.'
+    ],
+    priority: 'Clarity and Credibility simultaneously',
+    steps: [
+      { title: 'Define the concept before anything else', text: 'The ecosystem presence you have built will keep dispersing until there is a single clear concept for it to concentrate around. That definition is the first and most urgent priority.' },
+      { title: 'Build credibility around that specific concept', text: 'Develop the intellectual depth needed to validate the positioning you are defining. The existing Earned Authority signals need a clear concept to point to.' },
+      { title: 'Realign existing ecosystem signals', text: 'As clarity and credibility strengthen, the existing ecosystem presence will naturally begin to tell a more coherent story. Guide that realignment deliberately.' }
+    ]
+  },
+  strong_foundation: {
+    name: 'The Strong Foundation',
+    tagline: 'Strong Clarity and Credibility. Weak Earned Authority.',
+    description: [
+      'The most common pattern among organizations that have invested seriously in their brand and content without building the independent ecosystem alongside it. The owned picture is strong. The independent validation is thin.',
+      'The machine has a clear, credible owned picture and not enough independent confirmation to form the confident recognition needed to consistently cite you. The foundation is genuinely solid. The gap is specifically in Earned Authority.'
+    ],
+    priority: 'Earned Authority',
+    steps: [
+      { title: 'Identify the three ecosystem environments that matter most', text: 'Where do the experts, analysts, and communities in your field gather? Those are the environments where Earned Authority forms. Choose three and commit to genuine presence in each.' },
+      { title: 'Distribute intellectual assets into the independent ecosystem', text: 'Not into owned channels. Into the structural, expert, and community layer environments where independent validation accumulates. One well-placed asset in a credible independent source is worth more than a year of owned content.' },
+      { title: 'Build the pattern, not the spike', text: 'Earned Authority is a pattern that accumulates over time, not a campaign with a peak. Consistent genuine contribution to the right independent environments compounds in a way that owned content never can.' }
+    ]
+  },
+  recognized_authority: {
+    name: 'The Recognized Authority',
+    tagline: 'All three corners strong and aligned.',
+    description: [
+      'The machine encounters a complete, coherent, thoroughly validated picture it can confidently categorize, verify, and trust. This is what the Authority Method is designed to build toward.',
+      'You appear consistently in AI-generated answers for your specific concept. Independent experts reference your thinking. Your composite picture in the ecosystem matches your intended positioning. The compounding has begun.'
+    ],
+    priority: 'Maintenance and deepening',
+    steps: [
+      { title: 'Maintain the discipline of the Refine stage', text: 'Recognition that is not actively maintained will decay as the ecosystem evolves around you. The risk for organizations in this pattern is complacency.' },
+      { title: 'Deepen the Expert Layer specifically', text: 'This is the hardest layer to build and the most valuable to compound. Continue creating original intellectual contribution worth referencing at the highest levels of your field.' },
+      { title: 'Extend into adjacent concepts deliberately', text: 'As recognition in your core concept compounds, consider which adjacent ideas you can begin to own. Expand the territory only once the core is genuinely solid.' }
+    ]
+  },
+  decaying_authority: {
+    name: 'The Decaying Authority',
+    tagline: 'All three corners weakening through underinvestment.',
+    description: [
+      'All three corners were once stronger. Recognition output tests show your name appearing with decreasing frequency and prominence. The composite picture exists but is showing its age: outdated information, weakening independent citations, community signals that have not been refreshed.',
+      'This is not irreversible. It is a clear signal that the investment in maintaining recognition has not kept pace with the evolution of the ecosystem around you.'
+    ],
+    priority: 'Renewal across all three corners',
+    steps: [
+      { title: 'Audit the composite picture urgently', text: 'Find out exactly where the decay is most visible. Outdated Structural Layer entries, citation patterns that have plateaued, community signals that no longer reflect current positioning. The diagnosis tells you where to invest first.' },
+      { title: 'Refresh the Structural and Expert Layers with priority', text: 'These age most visibly when investment pauses. Update formal knowledge representations. Recommit to intellectual contribution that earns fresh citations from current voices.' },
+      { title: 'Treat this as a renewal program, not a reputation repair', text: 'Decaying authority is a maintenance failure, not a crisis. The underlying Recognition Triangle architecture is there. It needs sustained renewal investment, not emergency intervention.' }
+    ]
+  }
+};
+
+/* List of the six pattern keys, in the order they should be displayed
+   in the "All six Recognition Triangle patterns" comparison grid. */
+var ALL_PATTERN_KEYS = [
+  'promising_claim',
+  'hidden_expert',
+  'validated_generalist',
+  'strong_foundation',
+  'recognized_authority',
+  'decaying_authority'
+];
+
+/* ============================================================
+   STATE
+============================================================ */
+var state = {
+  current: 0,
+  answers: {},
+  scores: { c: 0, k: 0, a: 0 },
+  lead: { name: '', email: '', company: '' },
+  patternKey: null,
+  cpct: 0,
+  kpct: 0,
+  apct: 0
+};
+
+/* ============================================================
+   HELPERS
+============================================================ */
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+/* Strip the leading "The " from a pattern name for display,
+   e.g. "The Promising Claim" -> "Promising Claim".
+   Using replace() here (rather than the old split(' The ')
+   approach) guarantees a real string is always returned - never undefined. */
+function shortPatternName(name) {
+  return name.replace(/^The\s+/, '');
+}
+
+/* ============================================================
+   SCORING - pattern determination
+   This always returns one of the six PATTERNS keys below -
+   recognized_authority, decaying_authority, strong_foundation,
+   promising_claim, hidden_expert, or validated_generalist.
+   The final fallback chain guarantees a valid key is always
+   returned, and the safety check at the bottom guarantees
+   PATTERNS[key] is never undefined.
+============================================================ */
+function determinePattern(c, k, a) {
+  var MAX = 15; // max score per dimension (5 questions x 3)
+  var cp = (c / MAX) * 100;
+  var kp = (k / MAX) * 100;
+  var ap = (a / MAX) * 100;
+  var avg = (cp + kp + ap) / 3;
+
+  var key;
+
+  // Recognized Authority: all three dimensions strong
+  if (cp >= 60 && kp >= 60 && ap >= 60) {
+    key = 'recognized_authority';
+  }
+  // Decaying Authority: all three present but all weakening together
+  else if (cp >= 30 && kp >= 30 && ap >= 30 && avg < 65) {
+    key = 'decaying_authority';
+  }
+  // Strong Foundation: clarity + credibility strong, authority weak
+  else if (cp >= 55 && kp >= 55 && ap < 45) {
+    key = 'strong_foundation';
+  }
+  // Promising Claim: clarity strong, credibility + authority weak
+  else if (cp >= 55 && kp < 50 && ap < 50) {
+    key = 'promising_claim';
+  }
+  // Hidden Expert: credibility strong, clarity + authority weak
+  else if (kp >= 55 && cp < 50 && ap < 50) {
+    key = 'hidden_expert';
+  }
+  // Validated Generalist: some earned authority, clarity + credibility weak
+  else if (ap >= 45 && cp < 50 && kp < 50) {
+    key = 'validated_generalist';
+  }
+  // Tiebreak: whichever dimension is relatively strongest decides the pattern
+  else if (cp >= kp && cp >= ap) {
+    key = 'promising_claim';
+  }
+  else if (kp >= cp && kp >= ap) {
+    key = 'hidden_expert';
+  }
+  else {
+    key = 'strong_foundation';
+  }
+
+  // Safety net - always return a key that exists in PATTERNS
+  return PATTERNS[key] ? key : 'strong_foundation';
+}
+
+/* ============================================================
+   RENDER HELPERS
+============================================================ */
+function getDimLabel(dim) {
+  if (dim === 'c') return { label: 'Clarity', cls: 'q-dim-clarity' };
+  if (dim === 'k') return { label: 'Credibility', cls: 'q-dim-credibility' };
+  return { label: 'Earned Authority', cls: 'q-dim-authority' };
+}
+
+function getPipClass(dim) {
+  if (dim === 'c') return '';
+  if (dim === 'k') return 'lav';
+  return 'grey';
+}
+
+function updateProgress() {
+  var idx = state.current;
+  var pct = Math.round((idx / QUESTIONS.length) * 100);
+  document.getElementById('q-progress-fill').style.width = pct + '%';
+  document.getElementById('q-fraction').textContent = (idx + 1) + ' of ' + QUESTIONS.length;
+  document.getElementById('q-progress-bar').setAttribute('aria-valuenow', pct);
+
+  // Dimension pips
+  var dims = QUESTIONS.map(function(q) { return q.dim; });
+  var pipHtml = dims.map(function(d, i) {
+    var cls = getPipClass(d);
+    var state_cls = i < idx ? 'done' : (i === idx ? 'active' : '');
+    return '<div class="dim-pip ' + cls + ' ' + state_cls + '" aria-hidden="true"></div>';
+  }).join('');
+  document.getElementById('dim-indicator').innerHTML = pipHtml;
+}
+
+function renderQuestion(idx) {
+  var q = QUESTIONS[idx];
+  var dl = getDimLabel(q.dim);
+  var answered = state.answers[q.id] !== undefined;
+
+  var optsHtml = q.options.map(function(o, oi) {
+    var sel = answered && state.answers[q.id] === oi ? 'sel' : '';
+    return '<button class="opt ' + sel + '" onclick="selectOpt(' + idx + ',' + oi + ')" data-score="' + o.score + '">' +
+      '<span class="opt-chk" aria-hidden="true"></span>' +
+      '<span class="opt-text"><span class="opt-lbl">' + o.label + '</span>' +
+      (o.sub ? '<span class="opt-sub">' + o.sub + '</span>' : '') +
+      '</span></button>';
+  }).join('');
+
+  var backBtn = idx > 0
+    ? '<button class="btn-back" onclick="goBack()" aria-label="Go to previous question">← Back</button>'
+    : '<span></span>';
+
+  var html = '<div class="q-card" id="current-q">' +
+    '<div class="q-dim-label ' + dl.cls + '">' + dl.label + '</div>' +
+    '<div class="q-num">Question ' + String(idx + 1).padStart(2,'0') + ' of 15</div>' +
+    '<div class="q-text">' + q.text + '</div>' +
+    '<p class="q-hint">' + q.hint + '</p>' +
+    '<div class="opts" role="group" aria-label="Answer options">' + optsHtml + '</div>' +
+    '<div class="q-nav">' +
+      backBtn +
+    '</div>' +
+    '</div>';
+
+  document.getElementById('q-mount').innerHTML = html;
+  updateProgress();
+  document.getElementById('q-mount').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function selectOpt(qIdx, optIdx) {
+  // Ignore a stray click that lands during the auto-advance delay,
+  // once the screen has already moved on to another question.
+  if (qIdx !== state.current) return;
+
+  var q = QUESTIONS[qIdx];
+  state.answers[q.id] = optIdx;
+  recalcScores();
+
+  // Mark the selection in place rather than re-rendering the whole
+  // card, so picking an answer never looks like the screen jumped
+  // on its own - the only thing that moves is the highlight, until
+  // the deliberate step forward a moment later.
+  var buttons = document.querySelectorAll('#q-mount .opt');
+  buttons.forEach(function(btn, i) {
+    btn.classList.toggle('sel', i === optIdx);
+  });
+
+  window.setTimeout(function() {
+    if (state.current !== qIdx) return; // already navigated away
+    advance();
+  }, 450);
+}
+
+function recalcScores() {
+  state.scores = { c: 0, k: 0, a: 0 };
+  QUESTIONS.forEach(function(q) {
+    if (state.answers[q.id] !== undefined) {
+      state.scores[q.dim] += q.options[state.answers[q.id]].score;
+    }
+  });
+}
+
+function advance() {
+  if (state.current < QUESTIONS.length - 1) {
+    state.current++;
+    renderQuestion(state.current);
+  } else {
+    showCapture();
+  }
+}
+
+function goBack() {
+  if (state.current > 0) {
+    state.current--;
+    renderQuestion(state.current);
+  }
+}
+
+/* ============================================================
+   LEAD CAPTURE
+   Shown after the final question. Captures name, email, and
+   company, plus every answer given, and sends it all to
+   Formspree BEFORE the results are revealed.
+============================================================ */
+function showCapture() {
+  recalcScores();
+  var c = state.scores.c, k = state.scores.k, a = state.scores.a;
+  var MAX = 15;
+
+  state.cpct = Math.round((c / MAX) * 100);
+  state.kpct = Math.round((k / MAX) * 100);
+  state.apct = Math.round((a / MAX) * 100);
+  state.patternKey = determinePattern(c, k, a);
+  var pattern = PATTERNS[state.patternKey];
+
+  document.getElementById('quiz-screen').classList.remove('active');
+
+  // One hidden field per question, capturing the full question
+  // text and the option the person selected.
+  var answerFields = QUESTIONS.map(function(q, i) {
+    var dl = getDimLabel(q.dim);
+    var opt = q.options[state.answers[q.id]];
+    var summary = 'Q' + (i + 1) + ' [' + dl.label + ', score ' + opt.score + '/3] ' + q.text + ' -- Selected: ' + opt.label;
+    return '<input type="hidden" name="q' + String(i + 1).padStart(2, '0') + '" value="' + escapeHtml(summary) + '">';
+  }).join('');
+
+  var html =
+    '<div class="result-hero" id="capture-top">' +
+      '<h2 class="rc-title" style="font-size:clamp(26px,4vw,38px); margin-bottom:14px;">Last step, almost there.</h2>' +
+      '<p class="rc-sub">Before you see your result, tell us a little about you. Your answers and result go straight through, so if you would like a follow-up later we will already have the context.</p>' +
+      '<form class="capture-form" id="capture-form" action="https://formspree.io/f/xwlkdyjp" method="POST">' +
+        '<input type="hidden" name="_subject" value="Recognition Diagnostic completed: ' + pattern.name + '">' +
+        '<input type="hidden" name="source" value="diagnostic-completed">' +
+        '<input type="hidden" name="pattern" value="' + pattern.name + '">' +
+        '<input type="hidden" name="clarity_score" value="' + state.cpct + '%">' +
+        '<input type="hidden" name="credibility_score" value="' + state.kpct + '%">' +
+        '<input type="hidden" name="authority_score" value="' + state.apct + '%">' +
+        answerFields +
+        '<div class="capture-row">' +
+          '<div class="field-group">' +
+            '<label class="field-label" for="cap-name">Your name <span aria-hidden="true">*</span></label>' +
+            '<input type="text" id="cap-name" name="name" class="field-input" placeholder="First and last name" required autocomplete="name">' +
+          '</div>' +
+          '<div class="field-group">' +
+            '<label class="field-label" for="cap-email">Email address <span aria-hidden="true">*</span></label>' +
+            '<input type="email" id="cap-email" name="email" class="field-input" placeholder="your@email.com" required autocomplete="email">' +
+          '</div>' +
+        '</div>' +
+        '<div class="field-group">' +
+          '<label class="field-label" for="cap-company">Company or brand <span aria-hidden="true">*</span></label>' +
+          '<input type="text" id="cap-company" name="company" class="field-input" placeholder="Your company or brand name" required autocomplete="organization">' +
+        '</div>' +
+        '<button type="submit" class="btn-primary" id="capture-submit">See My Result' +
+          '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+        '</button>' +
+        '<p class="capture-error" id="capture-error" style="display:none;">Something went wrong sending your answers. Please check your details and try again.</p>' +
+      '</form>' +
+    '</div>';
+
+  document.getElementById('capture-mount').innerHTML = html;
+  document.getElementById('capture-screen').classList.add('active');
+  document.getElementById('capture-screen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  document.getElementById('capture-form').addEventListener('submit', submitCapture);
+}
+
+async function submitCapture(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById('capture-submit');
+  var err = document.getElementById('capture-error');
+  err.style.display = 'none';
+
+  var origHtml = btn.innerHTML;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    var res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      state.lead.name = document.getElementById('cap-name').value;
+      state.lead.email = document.getElementById('cap-email').value;
+      state.lead.company = document.getElementById('cap-company').value;
+      document.getElementById('capture-screen').classList.remove('active');
+      showResults();
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = origHtml;
+      err.style.display = 'block';
+    }
+  } catch (ex) {
+    btn.disabled = false;
+    btn.innerHTML = origHtml;
+    err.style.display = 'block';
+  }
+  return false;
+}
+
+/* ============================================================
+   RESULTS
+============================================================ */
+function showResults() {
+  // Scores and pattern were already computed in showCapture(),
+  // but recompute defensively in case showResults is ever
+  // called on its own.
+  if (!state.patternKey) {
+    recalcScores();
+    var MAX = 15;
+    state.cpct = Math.round((state.scores.c / MAX) * 100);
+    state.kpct = Math.round((state.scores.k / MAX) * 100);
+    state.apct = Math.round((state.scores.a / MAX) * 100);
+    state.patternKey = determinePattern(state.scores.c, state.scores.k, state.scores.a);
+  }
+
+  var patternKey = state.patternKey;
+  var pattern = PATTERNS[patternKey];
+  var cpct = state.cpct, kpct = state.kpct, apct = state.apct;
+
+  document.getElementById('capture-screen').classList.remove('active');
+  document.getElementById('results-screen').classList.add('active');
+
+  var stepsHtml = pattern.steps.map(function(s, i) {
+    return '<div class="rnb-step">' +
+      '<span class="rnb-n" aria-hidden="true">0' + (i + 1) + '</span>' +
+      '<div><div class="rnb-title">' + s.title + '</div><p class="rnb-text">' + s.text + '</p></div>' +
+      '</div>';
+  }).join('');
+
+  var ppHtml = ALL_PATTERN_KEYS.map(function(pk) {
+    var p = PATTERNS[pk];
+    var isYours = pk === patternKey;
+    return '<div class="pp-card' + (isYours ? ' is-yours' : '') + '">' +
+      (isYours ? '<div class="pp-yours-tag">Your pattern</div>' : '') +
+      '<div class="pp-name">' + shortPatternName(p.name) + '</div>' +
+      '<div class="pp-dims">' + p.tagline + '</div>' +
+      '</div>';
+  }).join('');
+
+  var descHtml = pattern.description.map(function(p) { return '<p>' + p + '</p>'; }).join('');
+
+  var html =
+    '<div class="result-hero" id="result-top">' +
+      '<div class="result-eyebrow">Your Recognition Triangle pattern</div>' +
+      '<div class="result-pattern-name" id="res-name">' + shortPatternName(pattern.name) + '</div>' +
+      '<div class="result-pattern-sub">' + pattern.tagline + '</div>' +
+      '<div class="score-bars" aria-label="Your dimension scores">' +
+        '<div class="score-bar-item">' +
+          '<div class="score-bar-header"><span class="score-bar-label">Clarity</span><span class="score-bar-val">' + cpct + '%</span></div>' +
+          '<div class="score-bar-track"><div class="score-bar-fill clarity" id="bar-c" style="width:0%"></div></div>' +
+        '</div>' +
+        '<div class="score-bar-item">' +
+          '<div class="score-bar-header"><span class="score-bar-label">Credibility</span><span class="score-bar-val">' + kpct + '%</span></div>' +
+          '<div class="score-bar-track"><div class="score-bar-fill credibility" id="bar-k" style="width:0%"></div></div>' +
+        '</div>' +
+        '<div class="score-bar-item">' +
+          '<div class="score-bar-header"><span class="score-bar-label">Earned Authority</span><span class="score-bar-val">' + apct + '%</span></div>' +
+          '<div class="score-bar-track"><div class="score-bar-fill authority" id="bar-a" style="width:0%"></div></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="result-desc-block">' +
+      '<div class="rdb-label">What this means</div>' +
+      '<div class="rdb-text">' + descHtml + '</div>' +
+    '</div>' +
+
+    '<div class="result-patterns-block">' +
+      '<div class="pp-label">All six Recognition Triangle patterns</div>' +
+      '<div class="pp-grid">' + ppHtml + '</div>' +
+    '</div>' +
+
+    '<div class="result-next-block">' +
+      '<div class="rnb-label">Where to invest first: ' + pattern.priority + '</div>' +
+      '<div class="rnb-steps">' + stepsHtml + '</div>' +
+    '</div>' +
+
+    '<div class="result-ctas">' +
+      '<a href="https://aingworth.com/services/" class="btn-primary">Work With Us' +
+        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '</a>' +
+      '<a href="https://aingworth.com/book/" class="btn-ghost">About the Book</a>' +
+    '</div>' +
+
+    '<button class="btn-restart" onclick="restartQuiz()">Start Over</button>';
+
+  document.getElementById('results-mount').innerHTML = html;
+  document.getElementById('result-top').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Animate bars after short delay
+  setTimeout(function() {
+    var bc = document.getElementById('bar-c');
+    var bk = document.getElementById('bar-k');
+    var ba = document.getElementById('bar-a');
+    if (bc) bc.style.width = cpct + '%';
+    if (bk) bk.style.width = kpct + '%';
+    if (ba) ba.style.width = apct + '%';
+  }, 200);
+}
+
+/* ============================================================
+   FLOW CONTROL
+============================================================ */
+function startQuiz() {
+  document.getElementById('intro-screen').style.display = 'none';
+  document.getElementById('quiz-screen').classList.add('active');
+  renderQuestion(0);
+  document.getElementById('quiz-screen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function restartQuiz() {
+  state = {
+    current: 0,
+    answers: {},
+    scores: { c: 0, k: 0, a: 0 },
+    lead: { name: '', email: '', company: '' },
+    patternKey: null,
+    cpct: 0,
+    kpct: 0,
+    apct: 0
+  };
+  document.getElementById('results-screen').classList.remove('active');
+  document.getElementById('results-mount').innerHTML = '';
+  document.getElementById('capture-screen').classList.remove('active');
+  document.getElementById('capture-mount').innerHTML = '';
+  document.getElementById('intro-screen').style.display = '';
+  document.getElementById('quiz-screen').classList.remove('active');
+  document.getElementById('intro-screen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
